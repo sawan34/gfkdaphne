@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chart</title>
+    </head>
+    <body>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        <form class="form-horizontal well">
+            <legend>
+              <h3>
+                <div id="title">Answer 3</div>
+              </h3>
+            </legend>
+            
+            <fieldset>
+                <label for="csvFileInput"> <strong>CSV File:</strong>
+                </label>
+                <input type="file" id="csvFileInput" onchange="handleFiles(this.files)"
+                accept=".csv">
+              </div>
+            </fieldset>
+          </form>
+    </body>
+
+    
+    <script src="./Chart.bundle.min.js" ></script>
+    <script src="app.js" ></script>
+</html>

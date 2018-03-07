@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Answer1</title>
+	
+</head>
+<body>
+<ul id="app">
+	
+</ul>
+</body>
+<script type="text/javascript">
+		(
+			function(j){
+				 let dom="";
+				for (let i = 1; i <= j; i++) {
+					let res = i;
+					if(i%15 ==0){
+						res = "BizzAppz"
+					}else if(i % 5 ==0){
+						res = "Appz";
+					}else if(i%3==0){
+						res = "Bizz"
+					}
+					dom += "<li>"+res +"</li>";
+				}
+				console.log(dom);
+				document.getElementById("app").innerHTML = dom;
+
+			}
+		)(100)
+	</script>
+</html>

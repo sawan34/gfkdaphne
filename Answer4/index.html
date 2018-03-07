@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./jquery.js"></script>
+   
+</head>
+<body>
+    <p id="info-text">Loading ... </p>
+</body>
+<script>
+
+var dom =  $("#info-text");
+var text ="";
+var ajx = $.get( "http://cdn.gfkdaphne.com/tests/async.php?a=1", function(data) {
+    text = data ;
+    $.get( "http://cdn.gfkdaphne.com/tests/async.php?a=2", function(data) {
+         dom.text(text + " " + data);
+        }).done(function() {
+            console.log( "second success" );
+            }).fail(function() {
+                console.log( "error" );
+            }).always(function(data) {
+                console.log(data );
+            });
+
+
+  }).done(function() {
+      console.log( "second success" );
+    }).fail(function() {
+        console.log( "error" );
+    }).always(function(data) {
+        console.log(data );
+    });
+  // Perform other work here ...
+   
+  // Set another completion function for the request above
+  ajx.always(function() {
+    console.log( "second finished" );
+  });
+</script>
+</html>
